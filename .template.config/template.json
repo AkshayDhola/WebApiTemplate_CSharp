@@ -1,0 +1,15 @@
+{
+    "$schema": "https://json.schemastore.org/template",
+    "author": "Akshay Dhola",
+    "classifications": ["Web"],
+    "identity": "Web.Template",
+    "name": "Web Api Template",
+    "description": "This is special description.",
+    "shortName":"web_api_tmpl",
+    "sourceName": "Web.Template",
+    "tags": {
+        "language": "C#",
+        "type": "project"
+    },
+    "preferNameDirectory": true
+}
