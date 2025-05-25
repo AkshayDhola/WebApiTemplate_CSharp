@@ -8,7 +8,7 @@ namespace Web.Template.Models.ResponseModels
         public string? Message { get; set; }
         public object? Data { get; set; }
 
-
+        public WebResponseModel() { }
         public WebResponseModel(HttpStatusCode statusCode, string? message, object? data)
         {
             StatusCode = statusCode;

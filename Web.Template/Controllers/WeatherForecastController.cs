@@ -1,11 +1,10 @@
-using Microsoft.AspNetCore.Mvc;
-using Web.Template.Models.ResponseModels;
-using Web.Template.Services.Interfaces;
-
 namespace Web.Template.Controllers
 {
+    using Microsoft.AspNetCore.Mvc;
+    using Web.Template.Services.Interfaces;
+    
     [Route("v1")]
-    public class WeatherForecastController : ControllerBase
+    public class WeatherForecastController : AppController
     {
         private readonly IWeatherForecast _weatherForecast;
 
@@ -17,8 +16,7 @@ namespace Web.Template.Controllers
         [HttpGet("WeatherForecast")]
         public async Task<IActionResult> GetWeatherForecast()
         {
-            WebResponseModel response = await _weatherForecast.GetWeatherForecastAsync();
-            return StatusCode((int)response.StatusCode, response);
+            return await HandleRequestAsync(() => _weatherForecast.GetWeatherForecastAsync());
         }
     }
 }
